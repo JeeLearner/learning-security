@@ -17,6 +17,10 @@
             <artifactId>security-browser</artifactId>
             <version>${learn.security.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
     </dependencies>
 
     <!-- 2.3.6 导入maven打包插件 mvn clean package -->
