@@ -1,8 +1,10 @@
 package com.learn.dto;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import com.learn.validator.MyConstraint;
 import org.hibernate.validator.constraints.NotBlank;
 
+import javax.validation.constraints.Past;
 import java.util.Date;
 
 public class User {
@@ -11,6 +13,7 @@ public class User {
     public interface UserDetailView extends UserSimpleView {};
 
     @JsonView(UserSimpleView.class)
+    @MyConstraint(message = "测试自定义注解")
     private String username;
 
     @JsonView(UserDetailView.class)
@@ -18,7 +21,7 @@ public class User {
     private String password;
 
     private String id;
-
+    @Past(message = "{message}")
     private Date birthday;
 
     /** getter/setter **/

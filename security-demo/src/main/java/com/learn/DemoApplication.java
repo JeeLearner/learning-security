@@ -1,5 +1,6 @@
 package com.learn;
 
+import com.learn.exception.UserNotExistException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,8 @@ public class DemoApplication {
 
     @GetMapping("/hello")
     public String hello(){
-        return "hello spring security";
+        //return "hello spring security";
+        throw new UserNotExistException("1");
     }
 
 
